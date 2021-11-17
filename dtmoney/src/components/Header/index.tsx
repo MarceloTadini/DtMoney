@@ -1,5 +1,5 @@
-import logoImg from '../assets/logo.svg' //O nome da imagem é importado como o nome seguido de img dentro do seu diretório 
-import { Container, Content } from './Header/styles';
+import logoImg from '../../assets/logo.svg' //O nome da imagem é importado como o nome seguido de img dentro do seu diretório 
+import { Container, Content } from './styles';
 
 export function Header() {
     return (
