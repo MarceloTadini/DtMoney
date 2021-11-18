@@ -3,6 +3,9 @@ import { Header } from "./components/Header";
 import { GlobalStyle } from "./styles/global";
 import Modal from 'react-modal';
 import { useState } from "react";
+import { NewTransactionModal } from "./components/NewTransactionModal";
+
+Modal.setAppElement('#root'); //Questão de acessibilidade para o modal ficar dentro da root e não no body do html
 
 export function App() {
 
@@ -20,12 +23,10 @@ export function App() {
     <>
       <Header onOpenNewTransactionModal={handleOpenNewTransactionModal}/>
       <DashBoard />
-      <Modal
-        isOpen={isNewTransactionModalOpen}
+      <NewTransactionModal 
+        isOpen={isNewTransactionModalOpen} 
         onRequestClose={handleCloseNewTransactionModal}
-      >
-        <h2>Cadastrar Transação</h2>
-      </Modal>
+      />
       <GlobalStyle />
     </>
   );
