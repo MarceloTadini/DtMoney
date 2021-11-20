@@ -4,6 +4,7 @@ import { GlobalStyle } from "./styles/global";
 import Modal from 'react-modal';
 import { useState } from "react";
 import { NewTransactionModal } from "./components/NewTransactionModal";
+import { TransactionsContext } from "./TransactionsContexts";
 
 Modal.setAppElement('#root'); //Questão de acessibilidade para o modal ficar dentro da root e não no body do html
 
@@ -20,7 +21,7 @@ export function App() {
     }
 
   return (
-    <>
+    <TransactionsContext.Provider value={[]}>
       <Header onOpenNewTransactionModal={handleOpenNewTransactionModal}/>
       <DashBoard />
       <NewTransactionModal 
@@ -28,7 +29,7 @@ export function App() {
         onRequestClose={handleCloseNewTransactionModal}
       />
       <GlobalStyle />
-    </>
+    </TransactionsContext.Provider>
   );
 }
 
