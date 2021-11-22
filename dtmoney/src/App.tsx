@@ -4,7 +4,7 @@ import { GlobalStyle } from "./styles/global";
 import Modal from 'react-modal';
 import { useState } from "react";
 import { NewTransactionModal } from "./components/NewTransactionModal";
-import { TransactionsContext, TransactionsProvider } from "./TransactionsContexts";
+import { TransactionsProvider } from "./hooks/useTransactions";
 
 Modal.setAppElement('#root'); //Questão de acessibilidade para o modal ficar dentro da root e não no body do html
 
